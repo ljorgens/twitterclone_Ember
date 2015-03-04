@@ -1,0 +1,1 @@
+twitterClone = Ember.Application.create();

@@ -1,0 +1,30 @@
+<div class="container">
+<h1>New Tweets!</h1>
+<!-- {{#view 'clickable'}}
+This is a clickable area!
+{{/view}} -->
+{{#each controller}}
+<ul>
+  <li {{action 'toggleTimeStamp'}}> {{profile}}{{tweet}} </li>
+      {{#if showTimeStamp}}
+        {{timestamp}}
+      {{/if}}
+</ul>
+{{/each}}
+
+    <!-- <ul>
+  {{#each}}
+      <li>
+        {{#link-to 'timestamp' this.id}}  {{profile}}{{tweet}} {{id}} {{/link-to}}
+      </li>
+  {{/each}}
+    </ul> -->
+  <h3>Add Tweet</h3>
+  <form>
+    {{input type='text' value=newTweetProfile size='50'}}
+    {{input type='text' value=newTweetTweet size='50' maxlength='141'}}
+    {{input type='text' value=newTweetTimestamp size='10'}}
+    <button type='submit' {{action 'addTweet'}}>Add tweet</button>
+  </form>
+
+</div>
